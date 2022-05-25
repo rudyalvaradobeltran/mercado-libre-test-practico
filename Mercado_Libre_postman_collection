@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "14f88813-2643-4439-bb79-6ffc2161e904",
+		"name": "Mercado Libre",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/items/MLA908599704",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"items",
+						"MLA908599704"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/items?q=libro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"items"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "libro"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

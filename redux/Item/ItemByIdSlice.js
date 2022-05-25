@@ -6,30 +6,30 @@ const initialState = {
   error: {},
 };
 
-export const itemSearch = createAsyncThunk("items/search", async (search) => {
+export const itemById = createAsyncThunk("items/:id", async (id) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/items?q=${search}`
+    `${process.env.NEXT_PUBLIC_API_URL}/api/items/${id}`
   ).then((data) => data.json());
   return res;
 });
 
-export const ItemSearchSlice = createSlice({
-  name: "itemSearch",
+export const itemByIdSlice = createSlice({
+  name: "itemById",
   initialState,
   reducers: {},
   extraReducers: {
-    [itemSearch.pending]: (state) => {
+    [itemById.pending]: (state) => {
       state.loading = true;
     },
-    [itemSearch.fulfilled]: (state, { payload }) => {
+    [itemById.fulfilled]: (state, { payload }) => {
       state.loading = false;
       state.data = payload;
     },
-    [itemSearch.rejected]: (state, { payload }) => {
+    [itemById.rejected]: (state, { payload }) => {
       state.loading = false;
       state.error = payload;
     },
   },
 });
 
-export const ItemSearchReducer = ItemSearchSlice.reducer;
+export const itemByIdReducer = itemByIdSlice.reducer;

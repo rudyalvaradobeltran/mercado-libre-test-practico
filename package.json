@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.8.0",
     "@mui/material": "^5.8.1",
+    "@mui/x-data-grid": "^5.11.1",
     "@reduxjs/toolkit": "^1.8.2",
     "next": "12.1.6",
     "next-seo": "^5.4.0",
