@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import ItemSlice from "./Item/ItemSlice";
+import { ItemSearchReducer } from "./Item/ItemSearchSlice";
 
 export const Store = configureStore({
   reducer: {
-    itemSlice: ItemSlice,
-  },
+    itemSearch: ItemSearchReducer,
+  }
 });
 
 export default Store;

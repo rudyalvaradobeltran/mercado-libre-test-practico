@@ -2,7 +2,7 @@ import { useState } from "react";
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
-import { fetchItem } from "./../../redux/Item/ItemSlice";
+import { itemSearch } from "../../redux/Item/ItemSearchSlice";
 import MercadoLibreIcon from "../../public/favicon.svg";
 import SearchIcon from "@mui/icons-material/Search";
 import {
@@ -39,7 +39,7 @@ export default function AppBar() {
               placeholder={texts.searchPlaceholder}
               inputProps={{ "aria-label": "search" }}
             />
-            <SearchIconWrapper onClick={() => dispatch(fetchItem(search))}>
+            <SearchIconWrapper onClick={() => dispatch(itemSearch(search))}>
               <SearchIcon />
             </SearchIconWrapper>
           </Search>
