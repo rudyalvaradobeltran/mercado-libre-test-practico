@@ -1,3 +1,4 @@
+import AppBar from '../components/AppBar'
 import { DefaultSeo, LocalBusinessJsonLd } from 'next-seo'
 import SEO from '../next-seo.config'
 import '../styles/globals.css'
@@ -9,6 +10,7 @@ export default function MercadoLibre({ Component, pageProps }) {
     <>
       <DefaultSeo {...metas} />
       <LocalBusinessJsonLd {...microdatas.LocalBusinessJsonLd} />
+      <AppBar />
       <Component {...pageProps} />
     </>
   );

@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from 'react';
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import MercadoLibreIcon from "../../public/favicon.svg";
@@ -11,8 +11,11 @@ import {
   SearchIconWrapper,
   StyledInputBase,
 } from "./styles";
+import { texts } from '../../utils/properties';
 
 export default function AppBar() {
+  const [search, setSearch] = useState("");
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <StyledAppBar position="static">
@@ -21,17 +24,19 @@ export default function AppBar() {
             size="large"
             edge="start"
             color="inherit"
-            aria-label="open drawer"
+            aria-label="icon"
             sx={{ mr: 2 }}
           >
-            <Image src={MercadoLibreIcon} alt="Mercado Libre" />
+            <Image src={MercadoLibreIcon} alt="icon" />
           </StyledIconButton>
           <Search>
             <StyledInputBase
-              placeholder="Nunca dejes de buscar"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder={texts.searchPlaceholder}
               inputProps={{ "aria-label": "search" }}
             />
-            <SearchIconWrapper>
+            <SearchIconWrapper onClick={() => console.log(search)}>
               <SearchIcon />
             </SearchIconWrapper>
           </Search>
