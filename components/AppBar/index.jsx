@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { fetchItem } from "./../../redux/Item/ItemSlice";
 import MercadoLibreIcon from "../../public/favicon.svg";
 import SearchIcon from "@mui/icons-material/Search";
 import {
@@ -11,10 +13,11 @@ import {
   SearchIconWrapper,
   StyledInputBase,
 } from "./styles";
-import { texts } from '../../utils/properties';
+import { texts } from "../../utils/properties";
 
 export default function AppBar() {
   const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -36,7 +39,7 @@ export default function AppBar() {
               placeholder={texts.searchPlaceholder}
               inputProps={{ "aria-label": "search" }}
             />
-            <SearchIconWrapper onClick={() => console.log(search)}>
+            <SearchIconWrapper onClick={() => dispatch(fetchItem(search))}>
               <SearchIcon />
             </SearchIconWrapper>
           </Search>
