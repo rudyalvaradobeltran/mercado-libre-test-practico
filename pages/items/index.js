@@ -1,8 +1,5 @@
-import { useRouter } from 'next/router'
+import Results from "../../components/Results";
 
-export default function Items () {
-  const router = useRouter()
-  const { search } = router.query
-
-  return <p>Search: {search}</p>
+export default function Items() {
+  return <Results />;
 }

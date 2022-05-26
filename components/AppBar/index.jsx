@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter } from 'next/router';
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
@@ -18,6 +19,12 @@ import { texts } from "../../utils/properties";
 export default function AppBar() {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleSearch = () => {
+    dispatch(itemSearch(search));
+    router.push(`items?search=${search}`);
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -39,7 +46,7 @@ export default function AppBar() {
               placeholder={texts.searchPlaceholder}
               inputProps={{ "aria-label": "search" }}
             />
-            <SearchIconWrapper onClick={() => dispatch(itemSearch(search))}>
+            <SearchIconWrapper onClick={(handleSearch)}>
               <SearchIcon />
             </SearchIconWrapper>
           </Search>
