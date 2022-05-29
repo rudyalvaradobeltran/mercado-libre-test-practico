@@ -5,7 +5,7 @@ import "../styles/globals.css";
 import Store from "../redux/Store";
 import AppBar from "../components/AppBar";
 
-export default function MercadoLibre({ Component, pageProps }) {
+const MercadoLibre = ({ Component, pageProps }) => {
   const { metas, microdatas } = SEO;
 
   return (
@@ -17,3 +17,5 @@ export default function MercadoLibre({ Component, pageProps }) {
     </Provider>
   );
 }
+
+export default MercadoLibre;

@@ -1,5 +1,7 @@
 import Results from "../../components/Results";
 
-export default function Items() {
+const Items = () => {
   return <Results />;
 }
+
+export default Items;

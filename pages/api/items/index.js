@@ -3,6 +3,7 @@ export default async function handler(req, res) {
     const results = await fetch(
       `https://api.mercadolibre.com/sites/MLA/search?q=${req.query.q}&limit=4`
     ).then((result) => result.json());
+
     const response = { author: { name: "Rudy", lastname: "Alvarado" } };
 
     response.categories = results["filters"].length > 0

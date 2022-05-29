@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from 'next/router';
 import { itemSearch } from "../../redux/Item/ItemSearchSlice";
+import ResultsItem from "../ResultsItem";
 
 const Results = () => {
   const router = useRouter();
@@ -21,9 +22,9 @@ const Results = () => {
         itemsSearchResults.data.items.map((item) => {
           return (
             <div key={item.id}>
-              {item.title}
+              <ResultsItem item={item} />
             </div>
-          )
+          );
         })}
     </>
   );

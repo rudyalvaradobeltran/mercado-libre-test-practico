@@ -1,8 +1,7 @@
-import { useRouter } from 'next/router'
+import Item from './../../components/Item';
 
-export default function ItemById () {
-  const router = useRouter()
-  const { id } = router.query
-
-  return <p>Item: {id}</p>
+const ItemById = () => {
+  return <Item />;
 }
+
+export default ItemById;

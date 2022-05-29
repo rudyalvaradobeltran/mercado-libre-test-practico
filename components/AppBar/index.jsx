@@ -16,7 +16,7 @@ import {
 } from "./styles";
 import { texts } from "../../utils/properties";
 
-export default function AppBar() {
+const AppBar = () => {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
   const router = useRouter();
@@ -61,3 +61,5 @@ export default function AppBar() {
     </Box>
   );
 }
+
+export default AppBar;
