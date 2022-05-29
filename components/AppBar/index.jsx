@@ -22,8 +22,13 @@ export default function AppBar() {
   const router = useRouter();
 
   const handleSearch = () => {
+    console.log('pasa');
     dispatch(itemSearch(search));
     router.push(`items?search=${search}`);
+  }
+
+  const handleOnKeyDown = (e) => {
+    if (e.key === 'Enter') handleSearch()
   }
 
   return (
@@ -43,6 +48,7 @@ export default function AppBar() {
             <StyledInputBase
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+              onKeyDown={(e) => handleOnKeyDown(e)}
               placeholder={texts.searchPlaceholder}
               inputProps={{ "aria-label": "search" }}
             />

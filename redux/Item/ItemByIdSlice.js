@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const initialState = {
   loading: false,
   data: {},
-  error: {},
+  error: false,
 };
 
 export const itemById = createAsyncThunk("items/:id", async (id) => {
@@ -25,9 +25,9 @@ export const itemByIdSlice = createSlice({
       state.loading = false;
       state.data = payload;
     },
-    [itemById.rejected]: (state, { payload }) => {
+    [itemById.rejected]: (state) => {
       state.loading = false;
-      state.error = payload;
+      state.error = true;
     },
   },
 });

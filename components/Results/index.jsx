@@ -9,7 +9,7 @@ const Results = () => {
   const itemsSearchResults = useSelector((store) => store.itemSearch);
 
   useEffect(() => {
-    if (!('items' in itemsSearchResults.data)) {
+    if (!itemsSearchResults.loading && !itemsSearchResults.error && !('items' in itemsSearchResults.data)) {
       const path = router.asPath.split('=');
       dispatch(itemSearch(path[path.length-1]));
     }
