@@ -22,10 +22,13 @@ export const ItemSearchSlice = createSlice({
   extraReducers: {
     [itemSearch.pending]: (state) => {
       state.loading = true;
+      state.data = {};
+      state.error = false;
     },
     [itemSearch.fulfilled]: (state, { payload }) => {
       state.loading = false;
       state.data = payload;
+      state.error = false;
     },
     [itemSearch.rejected]: (state) => {
       state.loading = false;

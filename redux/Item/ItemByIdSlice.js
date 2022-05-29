@@ -20,13 +20,17 @@ export const itemByIdSlice = createSlice({
   extraReducers: {
     [itemById.pending]: (state) => {
       state.loading = true;
+      state.data = {};
+      state.error = false;
     },
     [itemById.fulfilled]: (state, { payload }) => {
       state.loading = false;
       state.data = payload;
+      state.error = false;
     },
     [itemById.rejected]: (state) => {
       state.loading = false;
+      state.data = {};
       state.error = true;
     },
   },

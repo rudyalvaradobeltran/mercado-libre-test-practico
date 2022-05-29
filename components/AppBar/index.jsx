@@ -22,13 +22,16 @@ const AppBar = () => {
   const router = useRouter();
 
   const handleSearch = () => {
-    console.log('pasa');
     dispatch(itemSearch(search));
     router.push(`items?search=${search}`);
   }
 
   const handleOnKeyDown = (e) => {
     if (e.key === 'Enter') handleSearch()
+  }
+
+  const handleToolbarIconClick = () => {
+    router.push('/');
   }
 
   return (
@@ -41,6 +44,7 @@ const AppBar = () => {
             color="inherit"
             aria-label="icon"
             sx={{ mr: 2 }}
+            onClick={handleToolbarIconClick}
           >
             <Image src={MercadoLibreIcon} alt="icon" />
           </StyledIconButton>

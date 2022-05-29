@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { itemById } from "../../redux/Item/ItemByIdSlice";
 import Grid from "@mui/material/Grid";
 import { StyledGrid } from "./styles";
 
@@ -7,11 +9,13 @@ const ResultsItem = ({
   item: { id, picture, price, title, condition, free_shipping },
 }) => {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleItemClick = (id) => {
+    dispatch(itemById(id));
     router.push({
       pathname: "/items/[id]",
-      query: { id: id },
+      query: { id },
     });
   };
 
