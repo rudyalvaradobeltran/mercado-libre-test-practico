@@ -29,7 +29,14 @@ const ResultsItem = ({
       onClick={() => handleItemClick(id)}
     >
       <StyledGridItem item xs={3}>
-        <Image src={picture} alt={title} width="180" height="180" />
+        <Image
+          src={picture}
+          alt={title}
+          width="100%"
+          height="100%"
+          layout="responsive"
+          objectFit="contain"
+        />
       </StyledGridItem>
       <StyledGridItem item xs={7}>
         <p>

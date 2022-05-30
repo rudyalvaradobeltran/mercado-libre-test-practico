@@ -6,7 +6,7 @@ const Breadcrumbs = ({ categories }) => {
     <StyledBreadcrumbs separator="›" aria-label="breadcrumb">
       {categories.map((category) => {
         return (
-          <Link key={category} underline="hover" color="inherit">
+          <Link key={category} underline="hover" color="inherit" href={`../items?search=${category}`}>
             {category}
           </Link>
         );
