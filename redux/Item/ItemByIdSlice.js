@@ -8,7 +8,7 @@ const initialState = {
 
 export const itemById = createAsyncThunk("items/:id", async (id) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/items/${id}`
+    `/api/items/${id}`
   ).then((data) => data.json());
   return res;
 });

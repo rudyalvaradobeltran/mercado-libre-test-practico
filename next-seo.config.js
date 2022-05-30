@@ -4,11 +4,11 @@ export default {
     titleTemplate: process.env.NEXT_PUBLIC_SEO_TITLE,
     title: process.env.NEXT_PUBLIC_SEO_TITLE,
     description: process.env.NEXT_PUBLIC_SEO_DESCRIPTION,
-    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+    canonical: '.',
     openGraph: {
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_STATIC_DIR}${process.env.NEXT_PUBLIC_SEO_IMAGE_SHARE}`,
+          url: `${process.env.NEXT_PUBLIC_SEO_IMAGE_SHARE}`,
           width: 200,
           height: 200,
           alt: process.env.NEXT_PUBLIC_SEO_TITLE,
@@ -23,7 +23,7 @@ export default {
     additionalLinkTags: [
       {
         rel: 'icon',
-        href: `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_STATIC_DIR}${process.env.NEXT_PUBLIC_SEO_IMAGE}`,
+        href: `${process.env.NEXT_PUBLIC_SEO_IMAGE}`,
       },
     ],
     additionalMetaTags: [
@@ -44,21 +44,21 @@ export default {
   microdatas: {
     LocalBusinessJsonLd: {
       type: "Organization",
-      id: process.env.NEXT_PUBLIC_BASE_URL,
+      id: '.',
       name: process.env.NEXT_PUBLIC_SEO_NAME,
       description: process.env.NEXT_PUBLIC_SEO_DESCRIPTION,
-      url: process.env.NEXT_PUBLIC_BASE_URL,
+      url: '.',
       logo: {
         type: "ImageObject",
-        id: `${process.env.NEXT_PUBLIC_BASE_URL}/#logo`,
+        id: "/#logo",
         inLanguage: process.env.NEXT_PUBLIC_SEO_LOCALE,
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_SEO_IMAGE}`,
+        url: process.env.NEXT_PUBLIC_SEO_IMAGE,
         width: 64,
         height: 64,
         caption: process.env.NEXT_PUBLIC_SEO_NAME
       },
       image: {
-        id: `${process.env.NEXT_PUBLIC_BASE_URL}#logo`,
+        id: "#logo",
       },
       sameAs: [process.env.NEXT_PUBLIC_SEO_TWITTER_URL, process.env.NEXT_PUBLIC_SEO_FACEBOOK_URL, process.env.NEXT_PUBLIC_SEO_YOUTUBE_URL],
       description: process.env.NEXT_PUBLIC_SEO_DESCRIPTION,
