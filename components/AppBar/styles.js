@@ -23,6 +23,9 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
     paddingLeft: "8px",
   },
+  [theme.breakpoints.up("lg")]: {
+    marginRight: "36px"
+  }
 }));
 
 export const Search = styled("div")(({ theme }) => ({
@@ -35,7 +38,7 @@ export const Search = styled("div")(({ theme }) => ({
   marginRight: 0,
   marginLeft: 0,
   width: "100%",
-  [theme.breakpoints.up("sm")]: {
+  [theme.breakpoints.only("sm")]: {
     marginLeft: theme.spacing(3),
     width: "auto",
   },
@@ -61,6 +64,7 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingRight: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
+    fontSize: "1rem",
     [theme.breakpoints.only("sm")]: {
       width: "60ch",
     },

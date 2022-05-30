@@ -1,31 +1,36 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import { itemSearch } from "../../redux/Item/ItemSearchSlice";
 import ResultsItem from "../ResultsItem";
+import Breadcrumbs from "../Breadcrumbs";
+import { StyledBreadcrumbContainer, StyledResultsContainer } from "./styles";
 
 const Results = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const itemsSearchResults = useSelector((store) => store.itemSearch);
+  const { loading, error, data } = useSelector((store) => store.itemSearch);
 
   useEffect(() => {
-    if (!itemsSearchResults.loading && !itemsSearchResults.error && !('items' in itemsSearchResults.data)) {
-      const path = router.asPath.split('=');
-      dispatch(itemSearch(path[path.length-1]));
+    if (!loading && !error && !("items" in data)) {
+      const path = router.asPath.split("=");
+      dispatch(itemSearch(path[path.length - 1]));
     }
-  }, [dispatch, itemsSearchResults, router.asPath]);
+  }, [data, dispatch, error, loading, router.asPath]);
 
   return (
     <>
-      {JSON.stringify(itemsSearchResults.data.items) &&
-        itemsSearchResults.data.items.map((item) => {
-          return (
-            <div key={item.id}>
-              <ResultsItem item={item} />
-            </div>
-          );
-        })}
+      {data.categories && (
+        <StyledBreadcrumbContainer maxWidth="md">
+          <Breadcrumbs categories={data.categories} />
+        </StyledBreadcrumbContainer>
+      )}
+      <StyledResultsContainer maxWidth="md">
+        {JSON.stringify(data.items) &&
+          data.items.map((item) => {
+            return <ResultsItem key={item.key} item={item} />;
+          })}
+      </StyledResultsContainer>
     </>
   );
 };

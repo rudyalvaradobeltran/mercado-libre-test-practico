@@ -1,7 +1,5 @@
-import styles from "../styles/Home.module.css";
-
-const SearchBox = () => {
-  return <div className={styles.container}>Main</div>;
+const Main = () => {
+  return <></>;
 };
 
-export default SearchBox;
+export default Main;

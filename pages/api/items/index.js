@@ -17,9 +17,9 @@ export default async function handler(req, res) {
         id: item["id"],
         title: item["title"],
         price: {
-          amount: item["price"],
+          amount: item["price"].toString().split('.')[0],
           currency: item["currency_id"],
-          decimals: 0,
+          decimals: item["price"].toString().split('.')[1]
         },
         picture: item["thumbnail"],
         condition: item["condition"],

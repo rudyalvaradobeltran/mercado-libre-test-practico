@@ -2,10 +2,12 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { itemById } from "../../redux/Item/ItemByIdSlice";
-import Grid from "@mui/material/Grid";
-import { StyledGrid } from "./styles";
+import Typography from "@mui/material/Typography";
+import { StyledGrid, StyledGridItem } from "./styles";
+import { formatCurrency } from "../../utils/functions";
 
 const ResultsItem = ({
+  className,
   item: { id, picture, price, title, condition, free_shipping },
 }) => {
   const router = useRouter();
@@ -20,17 +22,29 @@ const ResultsItem = ({
   };
 
   return (
-    <StyledGrid container spacing={2} onClick={() => handleItemClick(id)}>
-      <Grid item xs={3}>
-        <Image src={picture} alt={title} width="90" height="90" />
-      </Grid>
-      <Grid item xs={7}>
-        <p>{`${price.amount} ${condition}`}</p>
-        <p>{title}</p>
-      </Grid>
-      <Grid item xs={2}>
-        <p>{free_shipping.toString()}</p>
-      </Grid>
+    <StyledGrid
+      className={className}
+      container
+      spacing={2}
+      onClick={() => handleItemClick(id)}
+    >
+      <StyledGridItem item xs={3}>
+        <Image src={picture} alt={title} width="180" height="180" />
+      </StyledGridItem>
+      <StyledGridItem item xs={7}>
+        <p>
+          <Typography variant="h5" mr="10px" component="span">
+            {formatCurrency(price)}
+          </Typography>
+          <sup>{condition === "new" ? "Nuevo" : ""}</sup>
+        </p>
+        <Typography variant="subtitle1">{title}</Typography>
+      </StyledGridItem>
+      <StyledGridItem item xs={2}>
+        <Typography variant="body2">
+          {free_shipping ? "Envío gratis" : ""}
+        </Typography>
+      </StyledGridItem>
     </StyledGrid>
   );
 };
