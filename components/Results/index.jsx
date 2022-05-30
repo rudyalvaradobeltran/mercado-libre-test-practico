@@ -28,7 +28,7 @@ const Results = () => {
       <StyledResultsContainer maxWidth="md">
         {JSON.stringify(data.items) &&
           data.items.map((item) => {
-            return <ResultsItem key={item.key} item={item} />;
+            return <ResultsItem key={item.title} item={item} />;
           })}
       </StyledResultsContainer>
     </>

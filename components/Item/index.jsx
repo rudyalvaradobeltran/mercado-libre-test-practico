@@ -47,19 +47,20 @@ const Item = () => {
                   height="100%"
                   layout="responsive"
                   objectFit="contain"
+                  priority
                 />
               </Grid>
               <Grid item xs={4} pl={5} pr={5}>
                 <Typography variant="body2" component="div" mb="10px">{`${
                   data.item.condition === "new" ? "Nuevo" : "Usado"
                 } · ${data.item.sold_quantity} Vendidos`}</Typography>
-                <Typography variant="h6" component="div" lineHeight="1.5rem" mb="10px">
+                <Typography variant="h6" component="div" mb="10px" lineHeight={1.25}>
                   {data.item.title}
                 </Typography>
                 <Typography variant="h4" component="div" mb="20px">
                   {formatCurrency(data.item.price)}
                 </Typography>
-                <Button variant="contained" lineHeight="2.5rem" fullWidth>Comprar</Button>
+                <Button variant="contained" fullWidth>Comprar</Button>
               </Grid>
             </StyledItemDataGrid>
             <StyledItemDescriptionGrid>

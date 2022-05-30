@@ -7,7 +7,8 @@ export const StyledGrid = styled(Grid)({
   marginLeft: "0px",
   marginTop: "0px",
   width: "calc(100% + 0px)",
-  backgroundColor: "#fff"
+  backgroundColor: "#fff",
+  borderBottom: "1px solid #eee",
 });
 
 export const StyledGridItem = styled(Grid)({

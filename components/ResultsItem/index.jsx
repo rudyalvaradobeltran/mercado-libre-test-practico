@@ -7,7 +7,6 @@ import { StyledGrid, StyledGridItem } from "./styles";
 import { formatCurrency } from "../../utils/functions";
 
 const ResultsItem = ({
-  className,
   item: { id, picture, price, title, condition, free_shipping },
 }) => {
   const router = useRouter();
@@ -23,7 +22,6 @@ const ResultsItem = ({
 
   return (
     <StyledGrid
-      className={className}
       container
       spacing={2}
       onClick={() => handleItemClick(id)}
@@ -36,6 +34,7 @@ const ResultsItem = ({
           height="100%"
           layout="responsive"
           objectFit="contain"
+          priority
         />
       </StyledGridItem>
       <StyledGridItem item xs={7}>

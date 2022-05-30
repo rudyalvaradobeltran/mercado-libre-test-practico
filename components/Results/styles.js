@@ -14,15 +14,15 @@ export const StyledResultsContainer = styled(Container)({
   paddingBottom: "24px",
   "& > div:first-of-type": {
     borderTopLeftRadius: "4px",
-    borderTopRightRadius: "4px"
+    borderTopRightRadius: "4px",
+  },
+  "& > div > div:nth-of-type(1)": {
+    paddingBottom: "16px"
   },
   "& > div > div:last-child": {
     paddingTop: "40px"
   },
-  "& > div:nth-child(n+1)": {
-    borderBottom: "1px solid #eee"
-  },
-  "& > div > div:nth-child(2)": {
+  "& > div > div:div:nth-of-type(2)": {
     paddingRight: "24px"
   },
   "& > div:last-child": {
