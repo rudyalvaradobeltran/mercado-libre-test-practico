@@ -62,11 +62,17 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: "16px",
     paddingRight: `calc(1em + ${theme.spacing(4)})`,
+    [`${theme.breakpoints.down("md")} and (orientation: portrait)`]: {
+      paddingRight: `calc(1em + ${theme.spacing(10)})`,
+    },
     transition: theme.transitions.create("width"),
     width: "100%",
     fontSize: "1rem",
     [theme.breakpoints.only("sm")]: {
       width: "60ch",
+    },
+    [`${theme.breakpoints.only("sm")} and (orientation: landscape)`]: {
+      width: "50ch",
     },
     [theme.breakpoints.up("md")]: {
       width: "80ch",

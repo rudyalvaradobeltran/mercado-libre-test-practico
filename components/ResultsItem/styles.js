@@ -11,12 +11,23 @@ export const StyledGrid = styled(Grid)({
   borderBottom: "1px solid #eee",
 });
 
-export const StyledGridItem = styled(Grid)({
-  "& > p > sup": {
+export const StyledGridItem = styled(Grid)(({ theme }) => ({
+  paddingRight: "16px",
+  "& > span > sup": {
     fontSize: "0.75rem",
     color: "green"
+  },
+  "&:nth-of-type(1) img": {
+    [theme.breakpoints.only("xs")]: {
+      paddingTop: "16px!important"
+    },
+  },
+  "&:last-child": {
+    [theme.breakpoints.down("md")]: {
+      display: "none"
+    },
   }
-});
+}));
 
 export default {
   StyledGrid,

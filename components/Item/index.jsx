@@ -39,7 +39,7 @@ const Item = () => {
         {"item" in data && (
           <>
             <StyledItemDataGrid container spacing={2}>
-              <Grid item xs={8} style={{width: '100%', height: '100%', position: 'relative'}}>
+              <Grid item xs={12} md={8} style={{width: '100%', height: '100%', position: 'relative'}}>
                 <Image
                   src={data.item.picture}
                   alt={data.item.title}
@@ -50,7 +50,7 @@ const Item = () => {
                   priority
                 />
               </Grid>
-              <Grid item xs={4} pl={5} pr={5}>
+              <Grid item xs={12} md={4} pl={5} pr={5}>
                 <Typography variant="body2" component="div" mb="10px">{`${
                   data.item.condition === "new" ? "Nuevo" : "Usado"
                 } · ${data.item.sold_quantity} Vendidos`}</Typography>

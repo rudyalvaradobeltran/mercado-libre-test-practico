@@ -9,7 +9,7 @@ export const StyledBreadcrumbContainer = styled(Container)({
   paddingLeft: "24px!important"
 });
 
-export const StyledResultsContainer = styled(Container)({
+export const StyledResultsContainer = styled(Container)(({ theme }) => ({
   paddingTop: "0px",
   paddingBottom: "24px",
   "& > div:first-of-type": {
@@ -18,6 +18,11 @@ export const StyledResultsContainer = styled(Container)({
   },
   "& > div > div:nth-of-type(1)": {
     paddingBottom: "16px"
+  },
+  "& > div > div": {
+    [theme.breakpoints.only("xs")]: {
+      paddingBottom: "16px"
+    },
   },
   "& > div > div:last-child": {
     paddingTop: "40px"
@@ -30,7 +35,7 @@ export const StyledResultsContainer = styled(Container)({
     borderBottomRightRadius: "4px",
     borderBottom: "unset"
   }
-});
+}));
 
 export default {
   StyledBreadcrumbContainer,

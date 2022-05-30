@@ -26,7 +26,7 @@ const ResultsItem = ({
       spacing={2}
       onClick={() => handleItemClick(id)}
     >
-      <StyledGridItem item xs={3}>
+      <StyledGridItem alignItems="center" item xs={4} md={3}>
         <Image
           src={picture}
           alt={title}
@@ -37,16 +37,16 @@ const ResultsItem = ({
           priority
         />
       </StyledGridItem>
-      <StyledGridItem item xs={7}>
-        <p>
+      <StyledGridItem item xs={8} md={7}>
+        <span>
           <Typography variant="h5" mr="10px" component="span">
             {formatCurrency(price)}
           </Typography>
           <sup>{condition === "new" ? "Nuevo" : ""}</sup>
-        </p>
+        </span>
         <Typography variant="subtitle1">{title}</Typography>
       </StyledGridItem>
-      <StyledGridItem item xs={2}>
+      <StyledGridItem item md={2}>
         <Typography variant="body2">
           {free_shipping ? "Envío gratis" : ""}
         </Typography>
