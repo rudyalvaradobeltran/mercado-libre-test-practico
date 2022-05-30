@@ -48,7 +48,7 @@ const AppBar = () => {
             sx={{ mr: 2 }}
             onClick={handleToolbarIconClick}
           >
-            <Image src={MercadoLibreIcon} alt="icon" />
+            <Image src={MercadoLibreIcon} alt="icon" width="42" height="42" />
           </StyledIconButton>
           <Search>
             <StyledInputBase
