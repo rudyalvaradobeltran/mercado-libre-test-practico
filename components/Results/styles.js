@@ -12,7 +12,7 @@ export const StyledBreadcrumbContainer = styled(Container)({
 export const StyledResultsContainer = styled(Container)({
   paddingTop: "0px",
   paddingBottom: "24px",
-  "& > div:first-child": {
+  "& > div:first-of-type": {
     borderTopLeftRadius: "4px",
     borderTopRightRadius: "4px"
   },

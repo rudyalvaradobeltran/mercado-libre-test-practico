@@ -30,9 +30,11 @@ const Item = () => {
 
   return (
     <>
-      <StyledBreadcrumbContainer maxWidth="md">
-        <Breadcrumbs categories={["Cat1", "Cat2", "Cat3"]} />
-      </StyledBreadcrumbContainer>
+      {data.categories && (
+        <StyledBreadcrumbContainer maxWidth="md">
+          <Breadcrumbs categories={data.categories} />
+        </StyledBreadcrumbContainer>  
+      )}
       <StyledItemContainer maxWidth="md">
         {"item" in data && (
           <>
@@ -55,16 +57,16 @@ const Item = () => {
                 <Typography variant="h4" component="div" mb="20px">
                   {formatCurrency(data.item.price)}
                 </Typography>
-                <Button variant="contained" fullWidth>Comprar</Button>
+                <Button variant="contained" lineHeight="2.5rem" fullWidth>Comprar</Button>
               </Grid>
             </StyledItemDataGrid>
             <StyledItemDescriptionGrid>
               <Grid item xs={12}>
-                <Typography variant="h5" component="div">
+                <Typography variant="h5" component="div" pb={2}>
                   Descripción del producto
                 </Typography>
                 <Typography variant="body2" component="div">
-                  {data.item.description}
+                  {data.item.description.length > 0 ? data.item.description : "No existe descripción para este producto"}
                 </Typography>
               </Grid>
             </StyledItemDescriptionGrid>

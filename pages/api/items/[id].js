@@ -3,11 +3,22 @@ export default async function handler(req, res) {
     const result = await fetch(
       `https://api.mercadolibre.com/items/${req.query.id}`
     ).then((result) => result.json());
+
     const description = await fetch(
       `https://api.mercadolibre.com/items/${req.query.id}/description`
     ).then((result) => result.json());
 
+    const categories = await fetch(
+      `https://api.mercadolibre.com/sites/MLA/search?q=${result["title"]}&limit=1`
+    ).then((result) => result.json());
+    
     const response = { author: { name: "Rudy", lastname: "Alvarado" } };
+
+    response.categories = categories["filters"].length > 0
+      ? categories["filters"][0]["values"][0]["path_from_root"].map(
+          (category) => category.name
+        )
+      : [];
 
     if (result["id"]) {
       response.item = {

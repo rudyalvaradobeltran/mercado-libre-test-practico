@@ -22,8 +22,10 @@ const AppBar = () => {
   const router = useRouter();
 
   const handleSearch = () => {
-    dispatch(itemSearch(search));
-    router.push(`items?search=${search}`);
+    if (search) {
+      dispatch(itemSearch(search));
+      router.push(`../items?search=${search}`);
+    }
   }
 
   const handleOnKeyDown = (e) => {
