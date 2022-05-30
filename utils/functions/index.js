@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 export const formatCurrency = (price) => {
-    const number = null;
+    let number = null;
     switch(price.currency){
         case "ARS":
             number = <>$ {formatThousands(price.amount)}<sup>{price.decimals}</sup></>;
