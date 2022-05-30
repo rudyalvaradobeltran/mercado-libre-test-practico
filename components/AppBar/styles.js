@@ -25,6 +25,10 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   },
   [theme.breakpoints.up("lg")]: {
     marginRight: "36px"
+  },
+  "& img": {
+    width: "42px!important",
+    height: "42px!important"
   }
 }));
 
