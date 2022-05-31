@@ -21,11 +21,7 @@ const ResultsItem = ({
   };
 
   return (
-    <StyledGrid
-      container
-      spacing={2}
-      onClick={() => handleItemClick(id)}
-    >
+    <StyledGrid container spacing={2} onClick={() => handleItemClick(id)}>
       <StyledGridItem alignItems="center" item xs={4} md={3}>
         <Image
           src={picture}

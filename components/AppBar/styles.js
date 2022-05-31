@@ -24,12 +24,12 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
     paddingLeft: "8px",
   },
   [theme.breakpoints.up("lg")]: {
-    marginRight: "36px"
+    marginRight: "36px",
   },
   "& img": {
     width: "42px!important",
-    height: "42px!important"
-  }
+    height: "42px!important",
+  },
 }));
 
 export const Search = styled("div")(({ theme }) => ({

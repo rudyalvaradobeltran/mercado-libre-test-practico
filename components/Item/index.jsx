@@ -33,13 +33,18 @@ const Item = () => {
       {data.categories && (
         <StyledBreadcrumbContainer maxWidth="md">
           <Breadcrumbs categories={data.categories} />
-        </StyledBreadcrumbContainer>  
+        </StyledBreadcrumbContainer>
       )}
       <StyledItemContainer maxWidth="md">
         {"item" in data && (
           <>
             <StyledItemDataGrid container spacing={2}>
-              <Grid item xs={12} md={8} style={{width: '100%', height: '100%', position: 'relative'}}>
+              <Grid
+                item
+                xs={12}
+                md={8}
+                style={{ width: "100%", height: "100%", position: "relative" }}
+              >
                 <Image
                   src={data.item.picture}
                   alt={data.item.title}
@@ -54,13 +59,20 @@ const Item = () => {
                 <Typography variant="body2" component="div" mb="10px">{`${
                   data.item.condition === "new" ? "Nuevo" : "Usado"
                 } · ${data.item.sold_quantity} Vendidos`}</Typography>
-                <Typography variant="h6" component="div" mb="10px" lineHeight={1.25}>
+                <Typography
+                  variant="h6"
+                  component="div"
+                  mb="10px"
+                  lineHeight={1.25}
+                >
                   {data.item.title}
                 </Typography>
                 <Typography variant="h4" component="div" mb="20px">
                   {formatCurrency(data.item.price)}
                 </Typography>
-                <Button variant="contained" fullWidth>Comprar</Button>
+                <Button variant="contained" fullWidth>
+                  Comprar
+                </Button>
               </Grid>
             </StyledItemDataGrid>
             <StyledItemDescriptionGrid>
@@ -69,7 +81,9 @@ const Item = () => {
                   Descripción del producto
                 </Typography>
                 <Typography variant="body2" component="div">
-                  {data.item.description.length > 0 ? data.item.description : "No existe descripción para este producto"}
+                  {data.item.description.length > 0
+                    ? data.item.description
+                    : "No existe descripción para este producto"}
                 </Typography>
               </Grid>
             </StyledItemDescriptionGrid>

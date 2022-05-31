@@ -7,9 +7,7 @@ const initialState = {
 };
 
 export const itemById = createAsyncThunk("items/:id", async (id) => {
-  const res = await fetch(
-    `/api/items/${id}`
-  ).then((data) => data.json());
+  const res = await fetch(`/api/items/${id}`).then((data) => data.json());
   return res;
 });
 

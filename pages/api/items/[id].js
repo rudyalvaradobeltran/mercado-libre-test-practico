@@ -11,23 +11,24 @@ export default async function handler(req, res) {
     const categories = await fetch(
       `https://api.mercadolibre.com/sites/MLA/search?q=${result["title"]}&limit=1`
     ).then((result) => result.json());
-    
+
     const response = { author: { name: "Rudy", lastname: "Alvarado" } };
 
-    response.categories = categories["filters"].length > 0
-      ? categories["filters"][0]["values"][0]["path_from_root"].map(
-          (category) => category.name
-        )
-      : [];
+    response.categories =
+      categories["filters"].length > 0
+        ? categories["filters"][0]["values"][0]["path_from_root"].map(
+            (category) => category.name
+          )
+        : [];
 
     if (result["id"]) {
       response.item = {
         id: result["id"],
         title: result["title"],
         price: {
-          amount: result["price"].toString().split('.')[0],
+          amount: result["price"].toString().split(".")[0],
           currency: result["currency_id"],
-          decimals: result["price"].toString().split('.')[1]
+          decimals: result["price"].toString().split(".")[1],
         },
         picture: result["pictures"][0]["url"],
         condition: result["condition"],

@@ -16,6 +16,6 @@ const MercadoLibre = ({ Component, pageProps }) => {
       <Component {...pageProps} />
     </Provider>
   );
-}
+};
 
 export default MercadoLibre;

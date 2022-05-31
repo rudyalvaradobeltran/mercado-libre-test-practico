@@ -6,7 +6,7 @@ export const StyledBreadcrumbContainer = styled(Container)({
   paddingTop: "15px!important",
   paddingRight: "24px!important",
   paddingBottom: "15px!important",
-  paddingLeft: "24px!important"
+  paddingLeft: "24px!important",
 });
 
 export const StyledResultsContainer = styled(Container)(({ theme }) => ({
@@ -17,27 +17,27 @@ export const StyledResultsContainer = styled(Container)(({ theme }) => ({
     borderTopRightRadius: "4px",
   },
   "& > div > div:nth-of-type(1)": {
-    paddingBottom: "16px"
+    paddingBottom: "16px",
   },
   "& > div > div": {
     [theme.breakpoints.only("xs")]: {
-      paddingBottom: "16px"
+      paddingBottom: "16px",
     },
   },
   "& > div > div:last-child": {
-    paddingTop: "40px"
+    paddingTop: "40px",
   },
   "& > div > div:div:nth-of-type(2)": {
-    paddingRight: "24px"
+    paddingRight: "24px",
   },
   "& > div:last-child": {
     borderBottomLeftRadius: "4px",
     borderBottomRightRadius: "4px",
-    borderBottom: "unset"
-  }
+    borderBottom: "unset",
+  },
 }));
 
 export default {
   StyledBreadcrumbContainer,
-  StyledResultsContainer
+  StyledResultsContainer,
 };

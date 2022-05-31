@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
@@ -26,15 +26,15 @@ const AppBar = () => {
       dispatch(itemSearch(search));
       router.push(`../items?search=${search}`);
     }
-  }
+  };
 
   const handleOnKeyDown = (e) => {
-    if (e.key === 'Enter') handleSearch()
-  }
+    if (e.key === "Enter") handleSearch();
+  };
 
   const handleToolbarIconClick = () => {
-    router.push('/');
-  }
+    router.push("/");
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -58,7 +58,7 @@ const AppBar = () => {
               placeholder={texts.searchPlaceholder}
               inputProps={{ "aria-label": "search" }}
             />
-            <SearchIconWrapper onClick={(handleSearch)}>
+            <SearchIconWrapper onClick={handleSearch}>
               <SearchIcon />
             </SearchIconWrapper>
           </Search>
@@ -66,6 +66,6 @@ const AppBar = () => {
       </StyledAppBar>
     </Box>
   );
-}
+};
 
 export default AppBar;

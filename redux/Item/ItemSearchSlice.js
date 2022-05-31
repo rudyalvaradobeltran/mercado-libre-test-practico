@@ -7,9 +7,7 @@ const initialState = {
 };
 
 export const itemSearch = createAsyncThunk("items/search", async (search) => {
-  const res = await fetch(
-    `/api/items?q=${search}`
-  ).then((data) => {
+  const res = await fetch(`/api/items?q=${search}`).then((data) => {
     return data.json();
   });
   return res;
@@ -38,4 +36,4 @@ export const ItemSearchSlice = createSlice({
   },
 });
 
-export const ItemSearchReducer = ItemSearchSlice.reducer;
+export const itemSearchReducer = ItemSearchSlice.reducer;

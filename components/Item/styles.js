@@ -11,6 +11,7 @@ export const StyledItemDataGrid = styled(Grid)({
   borderTopRightRadius: "4px",
   "& > div:first-of-type": {
     paddingLeft: "24px",
+    paddingRight: "24px",
     paddingTop: "24px",
   },
   "& > div:last-child": {
@@ -18,8 +19,8 @@ export const StyledItemDataGrid = styled(Grid)({
     paddingTop: "24px",
   },
   "& > div:last-child > button": {
-    lineHeight: "2.2rem"
-  }
+    lineHeight: "2.2rem",
+  },
 });
 
 export const StyledBreadcrumbContainer = styled(Container)({
@@ -33,7 +34,7 @@ export const StyledItemDescriptionGrid = styled(Grid)({
   backgroundColor: "#fff",
   padding: "24px",
   borderBottomLeftRadius: "4px",
-  borderBottomRightRadius: "4px"
+  borderBottomRightRadius: "4px",
 });
 
 export const StyledItemContainer = styled(Container)({
