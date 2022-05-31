@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "commit": "git-cz",
-    "release": "standard-version"
+    "release": "standard-version",
+    "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -19,6 +20,7 @@
     "@reduxjs/toolkit": "^1.8.2",
     "next": "12.1.6",
     "next-seo": "^5.4.0",
+    "next-sitemap": "^2.5.28",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-redux": "^8.0.2"
