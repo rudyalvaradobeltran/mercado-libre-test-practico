@@ -14,7 +14,7 @@ Una vez instalado podemos echar a andar el proyecto con el comando:
 
 ### `npm run dev`
 
-El proyecto se ejecutará en el puerto 3000 que es el puerto por defecto.
+El proyecto se ejecutará en el puerto 3000 que es el puerto por defecto. El puerto se puede configurar en el archivo .env.local.
 
 
 ## Instalación con Docker Compose
@@ -22,9 +22,9 @@ El proyecto se ejecutará en el puerto 3000 que es el puerto por defecto.
 Requisitos: Docker y Docker Compose.  
 En el directorio principal del proyecto debemos correr el comando de Docker compose:
 
-### `docker-compose up -d`
+### `docker-compose --env-file .env.local up -d`
 
-La imagen y el contenedor serán creados y el proyecto estará disponible en el puerto 3000.
+La imagen y el contenedor serán creados y el proyecto estará disponible en el puerto establecido en el archivo .env.local.
 
 
 ## Deployment

@@ -3,8 +3,8 @@ services:
   mercado-libre-test-practico:
     build: .
     expose:
-      - 3000
+      - ${PORT}
     ports:
-      - 3000:3000
+      - ${PORT}:${PORT}
     volumes:
       - .:/srv/app/mercado-libre-test-practico

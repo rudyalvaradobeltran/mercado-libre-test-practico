@@ -4,7 +4,7 @@ export default {
     titleTemplate: process.env.NEXT_PUBLIC_SEO_TITLE,
     title: process.env.NEXT_PUBLIC_SEO_TITLE,
     description: process.env.NEXT_PUBLIC_SEO_DESCRIPTION,
-    canonical: '.',
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
     openGraph: {
       images: [
         {
