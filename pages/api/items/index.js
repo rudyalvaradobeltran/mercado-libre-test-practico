@@ -17,7 +17,12 @@ export default async function handler(req, res) {
         `https://api.mercadolibre.com/sites/MLA/search?q=${req.query.q}&limit=4`
       ).then((result) => result.json());
 
-      const response = { author: { name: "Rudy", lastname: "Alvarado" } };
+      const response = {
+        author: {
+          name: process.env.NEXT_PUBLIC_AUTHOR_NAME,
+          lastname: process.env.NEXT_PUBLIC_AUTHOR_LASTNAME,
+        },
+      };
 
       response.categories =
         results["filters"].length > 0
