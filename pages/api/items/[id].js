@@ -4,6 +4,11 @@ export default async function handler(req, res) {
       `https://api.mercadolibre.com/items/${req.query.id}`
     ).then((result) => result.json());
 
+    if (result.error) {
+      res.status(404).send('Not found');
+      return;
+    }
+
     const description = await fetch(
       `https://api.mercadolibre.com/items/${req.query.id}/description`
     ).then((result) => result.json());
