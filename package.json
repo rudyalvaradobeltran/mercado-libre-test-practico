@@ -19,6 +19,7 @@
     "@mui/x-data-grid": "^5.11.1",
     "@reduxjs/toolkit": "^1.8.2",
     "env-cmd": "^10.1.0",
+    "ioredis": "^5.0.6",
     "next": "12.1.6",
     "next-seo": "^5.4.0",
     "next-sitemap": "^2.5.28",
