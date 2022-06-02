@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/rudyalvaradobeltran/mercado-libre-test-practico/compare/v0.1.1...v0.1.2) (2022-06-02)
+
+
+### Bug Fixes
+
+* **api [id]:** description fix ([aac7de7](https://github.com/rudyalvaradobeltran/mercado-libre-test-practico/commit/aac7de71e1e8c0a3aac0294706794061fe254fdb))
+
 ### 0.1.1 (2022-06-02)
 
 
