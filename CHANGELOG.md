@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/rudyalvaradobeltran/mercado-libre-test-practico/compare/v0.1.2...v0.1.3) (2022-06-02)
+
+
+### Bug Fixes
+
+* **.env, package.json, readme:** nEXT_PUBLIC fix for serverside, readme fix, package.json prod fix ([6221eea](https://github.com/rudyalvaradobeltran/mercado-libre-test-practico/commit/6221eeaf5b8651a4b492246d9ef84a8a277e1c43))
+
 ### [0.1.2](https://github.com/rudyalvaradobeltran/mercado-libre-test-practico/compare/v0.1.1...v0.1.2) (2022-06-02)
 
 
