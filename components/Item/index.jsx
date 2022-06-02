@@ -32,7 +32,7 @@ const Item = () => {
 
   return (
     <>
-      {error && <NotFound />}
+      {error && <NotFound item="product" />}
       {loading && <Spinner />}
       {data.categories && (
         <StyledBreadcrumbContainer maxWidth="md">

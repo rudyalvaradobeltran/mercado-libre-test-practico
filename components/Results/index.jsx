@@ -34,10 +34,11 @@ const Results = () => {
 
   return (
     <>
-      <>{routeState === "invalid" && <NotFound />}</>
+      <>{routeState === "invalid" && <NotFound item="page" />}</>
       {routeState === "valid" && (
         <>
           {loading && <Spinner />}
+          {!loading && data.categories.length === 0 && data.items.length === 0 && ( <NotFound item="search" /> )}
           {data.categories && (
             <StyledBreadcrumbContainer maxWidth="md">
               <Breadcrumbs categories={data.categories} />

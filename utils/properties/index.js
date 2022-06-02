@@ -1,7 +1,9 @@
 /* eslint-disable import/no-anonymous-default-export */
 export const texts = {
   searchPlaceholder: "Nunca dejes de buscar",
-  notFound: "Parece que esta página no existe",
+  notFoundPage: "Parece que esta página no existe",
+  notFoundProduct: "Producto no encontrado",
+  notFoundSearch: "No se han encontrado productos"
 };
 
 export default { texts };
