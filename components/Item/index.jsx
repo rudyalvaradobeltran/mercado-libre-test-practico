@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import Breadcrumbs from "../Breadcrumbs";
 import Typography from "@mui/material/Typography";
 import NotFound from "../NotFound";
+import Spinner from "../Spinner";
 import { formatCurrency } from "../../utils/functions";
 import {
   StyledItemDataGrid,
@@ -32,6 +33,7 @@ const Item = () => {
   return (
     <>
       {error && <NotFound />}
+      {loading && <Spinner />}
       {data.categories && (
         <StyledBreadcrumbContainer maxWidth="md">
           <Breadcrumbs categories={data.categories} />

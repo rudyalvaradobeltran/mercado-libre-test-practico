@@ -5,6 +5,7 @@ import { itemSearch } from "../../redux/Item/ItemSearchSlice";
 import ResultsItem from "../ResultsItem";
 import Breadcrumbs from "../Breadcrumbs";
 import NotFound from "../NotFound";
+import Spinner from "../Spinner";
 import { StyledBreadcrumbContainer, StyledResultsContainer } from "./styles";
 
 const Results = () => {
@@ -36,6 +37,7 @@ const Results = () => {
       <>{routeState === "invalid" && <NotFound />}</>
       {routeState === "valid" && (
         <>
+          {loading && <Spinner />}
           {data.categories && (
             <StyledBreadcrumbContainer maxWidth="md">
               <Breadcrumbs categories={data.categories} />
