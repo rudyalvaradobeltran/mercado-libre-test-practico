@@ -57,7 +57,9 @@ export default async function handler(req, res) {
           condition: result["condition"],
           free_shipping: result["shipping"]["free_shipping"],
           sold_quantity: result["sold_quantity"],
-          description: description["plain_text"],
+          description: description["error"]
+            ? "No hay descripción para este producto"
+            : description["plain_text"],
         };
       }
 
