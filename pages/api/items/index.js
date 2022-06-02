@@ -19,8 +19,8 @@ export default async function handler(req, res) {
 
       const response = {
         author: {
-          name: process.env.NEXT_PUBLIC_AUTHOR_NAME,
-          lastname: process.env.NEXT_PUBLIC_AUTHOR_LASTNAME,
+          name: process.env.AUTHOR_NAME,
+          lastname: process.env.AUTHOR_LASTNAME,
         },
       };
 
@@ -50,7 +50,7 @@ export default async function handler(req, res) {
         `q=${req.query.q}`,
         JSON.stringify(response),
         "EX",
-        parseInt(process.env.NEXT_PUBLIC_EXPIRES_AT)
+        parseInt(process.env.EXPIRES_AT)
       );
 
       res.status(200).json(response);

@@ -4,7 +4,7 @@ Este proyecto fue realizado como prueba técnica para la postulación al cargo d
 Para ello se utilizó React, Next.js, Material UI, Redux Toolkit y Express.
 
 
-## Instalación y pruebas
+## Instalación dev
 
 En el directorio principal del proyecto debemos correr el comando:
 
@@ -17,7 +17,7 @@ Una vez instalado podemos echar a andar el proyecto con el comando:
 El proyecto se ejecutará en el puerto 3000 que es el puerto por defecto. El puerto se puede configurar en el archivo .env.local.
 
 
-## Instalación con Docker Compose
+## Instalación dev con Docker Compose
 
 Requisitos: Docker y Docker Compose.  
 En el directorio principal del proyecto debemos correr el comando de Docker compose:
